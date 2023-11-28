@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { addToCart } from '../redux/slices/cartSlice';
 
 
+
 function WishList() {
   const wishlistArray = useSelector((state)=>state.wishlistReducer)
   console.log(wishlistArray);
@@ -38,7 +39,7 @@ function WishList() {
          </Card.Text>
         <div className='d-flex align-items-center justify-content-between'>
         <Button onClick={()=>dispatch(removeFromWislist(item.id))} variant='outline-danger rounded me-3' > <i class="fa-solid fa-trash"></i> </Button>
-         <Button  variant="outline-success rounded"> <i class="fa-solid fa-cart-plus"></i> </Button>
+         <Button  onClick={()=>handlewishlist(item)} variant="outline-success rounded"> <i class="fa-solid fa-cart-plus"></i> </Button>
  
         </div>
        </Card.Body>
